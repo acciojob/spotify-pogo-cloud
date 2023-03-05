@@ -38,7 +38,9 @@ public class SpotifyRepository {
     }
 
     public User createUser(String name, String mobile) {
-        User user=new User(name,mobile);
+        User user=new User();
+        user.setName(name);
+        user.setMobile(mobile);
         users.add(user);
         return user;
     }
@@ -46,6 +48,7 @@ public class SpotifyRepository {
     public Artist createArtist(String name) {
         Artist artist = new Artist(name);
         artists.add(artist);
+        artistAlbumMap.put(artist, new ArrayList<>());
         return artist;
     }
 
